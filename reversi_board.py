@@ -2,7 +2,7 @@ import re
 
 
 class Board:
-    def __init__(self, board, player):
+    def __init__(self, board: [str], player: str):
         self.board = board
         self.player = player
         self.opponent = 'W' if self.player == 'B' else 'B'
@@ -18,5 +18,5 @@ class Board:
     def mark_possibility_right(self, row: str):
         return re.sub(f'({self.player}{self.opponent}+)\\.', r'\g<1>0', row)
 
-    def mark_possibility_left(self, row):
+    def mark_possibility_left(self, row: str):
         return re.sub(f'\\.({self.opponent}+{self.player})', r'0\g<1>', row)
