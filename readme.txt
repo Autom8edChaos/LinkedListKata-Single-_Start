@@ -25,9 +25,9 @@ _At the bottom, there is a graphical explanation of each method_
 - we can not use an array
 
 ### Steps:
-- searching raises error in case of:
+- searching raises an IndexError in case of:
   - empty linked list
-  - not existing index
+  - a not existing index (this can be implemented after add_head is fully implemented)
 - adding items to the head and searching them
   - one, two, many
 - removing an item from the head
