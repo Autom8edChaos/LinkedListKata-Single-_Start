@@ -1,0 +1,2 @@
+class OutOfBoundError(RuntimeError):
+  pass

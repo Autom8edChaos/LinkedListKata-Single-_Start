@@ -1,23 +1,70 @@
-Reversi is a board game for two players. The board contains 8x8 squares. The players place Black or White counters onto the board, one counter per square. More information can be found on Wikipedia en.wikipedia.org/wiki/Reversi?. Your task is to write a program that takes a current board position together with information about whose turn it is, and returns a list of the legal moves for that player. A move is only legal if it results in at least one of the opponent's counters being flipped.
+In this problem, we are going to be implementing our own methods for the linked list data structure we are creating, so we should be able to create new instances of the LinkedList object. Our methods will be able to traverse the linked list as well remove or add nodes to either end of the linked list.
 
-Example input: (the final B indicates it is Black's turn)
-........
-........
-........
-...BW...
-...WB...
-........
-........
-........
-B
+### The Specifics
+The linked list is essentially a list of nodes, so we will have to define a Node class that our LinkedList constructor can use. We assign a node to act as the head or front of the list and we assign another node to act as the tail or back of the list.
 
-Example output: (each zero indicates a legal move for Black)
-........
-........
-....0...
-...BW0..
-..0WB...
-...0....
-........
-........
-B
+In this case we are going to create a singly linked list, so we only need a Next and no Previous on the list.
+
+
+#### The LinkedList has the following basic methods:
+- **add_tail** inserts a new node on the end of the list
+- **remove_tail** removes the last node of the list
+- **add_head** inserts a new node at the beginning of the list
+- **remove_head** removes the first node
+- **add** inserts a node on a certain index
+- **remove** deletes a node on a certain index
+- **search** traverses the list of nodes to search for a specific node on an index.
+
+_At the bottom, there is a graphical explanation of each method_  
+#### The Node class has two properties:
+- **value** which stores the value of the Node
+- **next** which points to the next node in the list
+
+#### Limitations and context: 
+- a skeleton of the linked list and node is already created
+- we can not use an array
+
+### Steps:
+- searching raises error in case of:
+  - empty linked list
+  - not existing index
+- adding items to the head and searching them
+  - one, two, many
+- removing an item from the head
+  - one, two, many
+- adding an item on a certain location
+  - middle, front, end
+- removing an item on a certain location
+  - middle, front, end
+- adding an item to the tail
+- removing an item from the tail
+
+## Graphical explanation of methods:
+
+    This is how a linked list with four items can be represented:
+              0      1      2      3     
+    [head]   cow -> chk -> mom -> dad  [tail]
+    
+    >>> add_head('flem')
+              0      1      2      3      4
+    [head]  flem -> cow -> chk -> mom -> dad  [tail]
+
+    >>> remove_head('flem')
+              0      1      2      3      
+    [head]   cow -> chk -> mom -> dad  [tail]
+
+    >>> search(2)
+    'mom'
+
+    >>> remove(2)
+              0      1      2      
+    [head]   cow -> chk -> dad  [tail]
+
+    >>> add_tail('earl')
+              0      1      2      3      
+    [head]   cow -> chk -> dad -> earl  [tail]
+
+    >>> remove_tail()
+              0      1      2      
+    [head]   cow -> chk -> dad  [tail]
+    
