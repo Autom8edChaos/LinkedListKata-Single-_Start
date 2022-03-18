@@ -3,13 +3,13 @@ from node import Node
 class LinkedList:
   
   def __init__(self):
-    pass
+    self.head = None
     
   def add_tail(self, item):
     pass
 
   def add_head(self, item):
-    pass
+    self.head = Node(item, self.head)
 
   def delete(self, index):
     pass
@@ -21,4 +21,11 @@ class LinkedList:
     pass
  
   def search(self, index: int) -> object:
-    pass
+    node = self.head
+    for i in range(index):
+      node = node.next
+    
+    if node:
+      return node.value
+    
+    raise IndexError
